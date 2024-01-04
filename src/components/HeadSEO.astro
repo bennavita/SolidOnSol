@@ -1,7 +1,6 @@
 ---
 import '@/styles/globals.css'
 import '@/styles/fonts.css'
-
 interface Props {
   title?: string | undefined
   description?: string | undefined
@@ -15,9 +14,10 @@ if (Astro.props.ogImage === undefined) {
 }
 
 const { title, description, ogImage } = Astro.props
+// href={`${Astro.site}favicon.svg`}
 ---
 
-<meta charset="utf-8" />
+<meta charSet="utf-8" />
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />

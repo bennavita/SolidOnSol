@@ -1,42 +1,117 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { buttonVariants } from '@/components/ui/button'
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { buttonVariants } from '@/components/ui/button';
+import { Image } from 'astro:assets';
+import solid_img from '../../src/components/images/solid.png';
+import solana_logo from '../../src/components/images/solana_logo.png';
 ---
 
 <BaseLayout
-  title="Astro Shadcn UI Template"
-  description="This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI."
+  title="Solid on SOL"
+  description="Meet $solid on SOL the greatest meme of the year"
 >
-  <section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-    <div class="flex max-w-[980px] flex-col items-start gap-2">
-      <h1
-        class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl"
-      >
-        Astro Shadcn UI Template <br class="hidden sm:inline" />
-         built with Radix UI and Tailwind CSS.
+<style>
+  
+  @keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le contenu horizontalement */
+    justify-content: space-evenly; /* Répartir uniformément l'espace vertical */
+    text-align: justify; /* Justifier le texte */
+    padding: 1%;
+  }
+  .title-section {
+    text-align: center;
+    margin-bottom: 2rem; /* Espace important en dessous du titre */
+  }
+
+  .text-section {
+    max-width: 700px; /* Ajustez selon le besoin */
+    padding: 1%;
+    margin-bottom: 1%;
+  }
+  .image-container {
+    margin: 10px auto; /* Centrer les images */
+    width: 300px; /* Largeur de l'image */
+    height: auto;
+    animation: float 4s ease-in-out infinite; /* Apply the floating animation */
+  }
+  .small-image {
+    margin: 10px auto; /* Centrer les images */
+    width: 100px; /* Largeur de l'image */
+    height: auto;
+  }
+  .bubble {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: bold;
+  }
+  .bubbles-container {
+    text-align: center;
+  }
+  .links-container {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  strong {
+    color: purple;
+  }
+</style>
+
+<section class="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+  <div class="center-content">
+    <div class="title-section">
+      <h1 class="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        Ride the Wave of Solana's Trendiest Memecoin! <strong> $SOLID </strong>
       </h1>
-      <p class="max-w-[700px] text-lg text-muted-foreground">
-        Accessible and customizable components that you can copy and paste into
-        your apps. Free. Open Source.
+    </div>
+    <div class="text-section">
+      <div class="title-section">
+        Supply 1 million
+      </div>
+      <p class="text-lg text-muted-foreground">
+        As the year draws to a close, It's time to look forward with optimism. This year, Solana has proven itself not just as a mainstream blockchain, but as a thriving community that's more robust and vibrant than ever. To celebrate, we introduce $SOLID - a token that's not just another asset, but a symbol of our collective journey and achievements.
       </p>
     </div>
-    <div class="flex gap-4">
-      <a
-        href="https://ui.shadcn.com"
-        target="_blank"
-        rel="noreferrer"
-        class={buttonVariants()}
-      >
-        Documentation
+    <div class="links-container">
+      <a href="https://raydium.io/swap/" target="_blank" rel="noreferrer" class={buttonVariants()}>
+        Buy $SOLID
       </a>
-      <a
-        href="https://github.com/AREA44/astro-shadcn-ui-template"
-        target="_blank"
-        rel="noreferrer"
-        class={buttonVariants({ variant: 'outline' })}
-      >
-        GitHub
+      <a href="https://t.me/SolidOnSOL/" target="_blank" rel="noreferrer" class={buttonVariants({ variant: 'outline' })}>
+        Telegram
       </a>
+    </div>
+    <div class="center-flex">
+      <div class="image-container">
+        <Image src={solid_img} alt="solid perso" style="width: 300px; height: auto;"/>
+      </div>
+      <div class="small-image">
+        <Image src={solana_logo} alt="logo solana" style="width: 100px; height: auto;"/>
+      </div>
+    </div>
+
+    <div class="bubbles-container">
+      <div class="bubble">Tax 1/1</div>
+      <div class="bubble">Contract Renounced</div>
+      <div class="bubble">Liquidity burned</div>
+      <div class="bubble">Fully decentralized</div>
     </div>
   </section>
 </BaseLayout>
+
